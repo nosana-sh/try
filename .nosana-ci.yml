@@ -3,8 +3,7 @@ nosana:
     description: Nosana Deno Template
 global:
     image: denoland/deno:latest
-
-    # Git, trigger on these branches
+    
     trigger:
         branch:
             - main
