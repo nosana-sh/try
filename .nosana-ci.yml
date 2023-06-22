@@ -16,6 +16,6 @@ jobs:
     - name: Dev
       commands:
           - cd react
-          - bun run dev
+          - bun install
       resources:
           - name: react
