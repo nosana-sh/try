@@ -1,6 +1,3 @@
-# .nosana-ci.yml
-nosana:
-    description: Nosana Deno Template
 global:
     image: denoland/deno:latest
     
@@ -22,8 +19,10 @@ jobs:
           - deno test
           - deno bench
           - deno compile main.ts
+          - ls -lah
 
     # Deno run external script
     - name: say
       commands:
+          - ls -lah
           - deno run --allow-env --allow-read npm:cowsay@1.5.0/cowthink Nosana is Fire!
