@@ -8,4 +8,14 @@ global:
 jobs:
     - name: Init
       commands:
-          - bun x  cowsay "Hello Nosana!"
+          - bun c react
+          - ls -lah react/
+      artifacts:
+        - name: react
+        
+    - name: Dev
+      commands:
+          - cd react
+          - bun run dev
+      resources:
+          - name: react
