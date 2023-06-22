@@ -1,28 +1,11 @@
 global:
-    image: denoland/deno:latest
+    image: oven/bun
     
     trigger:
         branch:
-            - main
-
-    # Environment variables
-    environment:
-        APP_ENV: production  # comment here about this var
+            - "*"
 
 jobs:
-
-    # Init Deno
-    - name: install
+    - name: Init
       commands:
-          - deno init
-          - deno run main.ts
-          - deno test
-          - deno bench
-          - deno compile main.ts
-          - ls -lah
-
-    # Deno run external script
-    - name: say
-      commands:
-          - ls -lah
-          - deno run --allow-env --allow-read npm:cowsay@1.5.0/cowthink Nosana is Fire!
+          - bun x  cowsay "Hello Nosana!"
